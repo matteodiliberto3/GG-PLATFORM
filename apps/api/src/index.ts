@@ -46,7 +46,7 @@ app.setErrorHandler((err, _req, reply) => {
 });
 
 app.get("/", async (req, reply) => ok(reply, { message: "GG-PLATFORM API is running", version: "1.0.0" }));
-app.get("/health", async (req, reply) => ok(reply, { ok: true }));
+app.get("/health", async (_req, reply) => reply.send({ ok: true }));
 
 // --- Internal: Scheduler (cron) ---
 app.get("/internal/run-scheduler", async (req, reply) => {
@@ -791,5 +791,11 @@ app.get("/v1/soc/health", async (req, reply) => {
   });
 });
 
-await app.listen({ port, host });
-app.log.info(`Server listening at http://${host}:${port}`);
+try {
+  await app.listen({ port, host });
+  app.log.info(`✅ Server listening at http://${host}:${port}`);
+  app.log.info(`✅ Health check available at http://${host}:${port}/health`);
+} catch (err) {
+  app.log.error({ err }, "Failed to start server");
+  process.exit(1);
+}
