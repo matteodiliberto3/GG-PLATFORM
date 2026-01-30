@@ -2,7 +2,12 @@ import Redis from "ioredis";
 
 export type SessionState = "ACTIVE" | "SUSPICIOUS" | "SHADOW_BANNED" | "HARD_BANNED";
 
-type RedisClient = InstanceType<typeof Redis>;
+// Helper function to get Redis instance type (works with Node16)
+function createRedisInstance(url: string): Redis {
+  return new Redis(url, { lazyConnect: true, maxRetriesPerRequest: 1 });
+}
+
+type RedisClient = ReturnType<typeof createRedisInstance>;
 
 let client: RedisClient | null = null;
 
@@ -16,7 +21,7 @@ export function getRedis(): RedisClient | null {
   if (client) return client;
   const url = getRedisUrl();
   if (!url) return null;
-  client = new Redis(url, { lazyConnect: true, maxRetriesPerRequest: 1 });
+  client = createRedisInstance(url);
   return client;
 }
 
