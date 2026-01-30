@@ -3,7 +3,7 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY apps/api/package.json ./
-RUN npm install --omit=dev
+RUN npm install
 COPY apps/api ./
 RUN npm run build
 

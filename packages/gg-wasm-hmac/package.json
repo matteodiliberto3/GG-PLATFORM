@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "wasm-pack build --target web",
-    "build:release": "wasm-pack build --target web --release"
+    "build": "wasm-pack build --target web && wasm-opt pkg/gg_wasm_hmac_bg.wasm --enable-bulk-memory -o pkg/gg_wasm_hmac_bg.wasm -O",
+    "build:release": "wasm-pack build --target web --release && wasm-opt pkg/gg_wasm_hmac_bg.wasm --enable-bulk-memory -o pkg/gg_wasm_hmac_bg.wasm -O"
   },
   "files": [
     "pkg"

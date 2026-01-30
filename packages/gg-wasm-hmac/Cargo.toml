@@ -13,6 +13,12 @@ sha2 = "0.10"
 wasm-bindgen = "0.2"
 hex = "0.4"
 
+[package.metadata.wasm-pack.profile.dev]
+wasm-opt = false
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
 [profile.release]
 lto = true
 opt-level = "s"

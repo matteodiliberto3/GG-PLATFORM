@@ -16,6 +16,7 @@ import {
   type ForensicDetail,
 } from "@/lib/api";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { TopBar } from "./components/TopBar";
 import { GatePanel } from "./components/GatePanel";
 import { ThreatFeed } from "./components/ThreatFeed";
@@ -24,6 +25,7 @@ import { KillSwitchModal } from "./components/KillSwitchModal";
 import styles from "./page.module.css";
 
 export default function SocPage() {
+  const router = useRouter();
   const [ready, setReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState<PendingRow[]>([]);
@@ -64,8 +66,7 @@ export default function SocPage() {
           data: { session },
         } = await supabase.auth.getSession();
         if (!session?.access_token) {
-          setError("Effettui l'accesso per usare la dashboard SOC.");
-          setReady(true);
+          router.replace("/login");
           return;
         }
         bearerRef.current = session.access_token;

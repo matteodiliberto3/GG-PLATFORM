@@ -1,0 +1,100 @@
+.screen {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #00FF00;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #ccc;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  background: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #00FF00;
+  font-size: 0.9375rem;
+  font-family: "JetBrains Mono", monospace;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #00FF00;
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #FF0000;
+  font-size: 0.8125rem;
+  margin-top: -0.5rem;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.button {
+  padding: 0.875rem 1.5rem;
+  background: #0d0d0d;
+  color: #00FF00;
+  border: 1px solid #00FF00;
+  border-radius: 4px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.button:hover:not(:disabled) {
+  background: #1a1a1a;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

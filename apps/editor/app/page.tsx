@@ -10,6 +10,7 @@ import {
   type AdminContent,
 } from "@/lib/api";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { OnboardingOverlay } from "./components/OnboardingOverlay";
 import { GuidaButton } from "./components/GuidaButton";
 import { Navigator } from "./components/Navigator";
@@ -20,6 +21,7 @@ import styles from "./page.module.css";
 const ONBOARDING_KEY = "editor_onboarding_complete";
 
 export default function EditorPage() {
+  const router = useRouter();
   const [ready, setReady] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -44,8 +46,7 @@ export default function EditorPage() {
           data: { session },
         } = await supabase.auth.getSession();
         if (!session?.access_token) {
-          setError("Effettui l'accesso per usare l'Editor.");
-          setReady(true);
+          router.replace("/login");
           return;
         }
         const me = await getAdminMe(session.access_token);

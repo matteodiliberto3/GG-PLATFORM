@@ -23,10 +23,10 @@ const ZW: [char; 4] = ['\u{200B}', '\u{200C}', '\u{200D}', '\u{2060}'];
 fn encode_zerowidth(bytes: &[u8]) -> String {
     let mut out = String::new();
     for &b in bytes {
-        out.push(ZW[(b >> 6) & 3]);
-        out.push(ZW[(b >> 4) & 3]);
-        out.push(ZW[(b >> 2) & 3]);
-        out.push(ZW[b as usize & 3]);
+        out.push(ZW[((b >> 6) & 3) as usize]);
+        out.push(ZW[((b >> 4) & 3) as usize]);
+        out.push(ZW[((b >> 2) & 3) as usize]);
+        out.push(ZW[(b & 3) as usize]);
     }
     out
 }
