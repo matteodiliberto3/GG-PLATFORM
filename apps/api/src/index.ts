@@ -19,8 +19,15 @@ import {
 } from "./lib/redis.js";
 import type { SessionState } from "./lib/redis.js";
 
-const port = Number(process.env.API_PORT ?? "4000");
-const host = process.env.API_HOST ?? "0.0.0.0";
+const portEnv =
+  (process.env.PORT && process.env.PORT.trim() !== "")
+    ? process.env.PORT
+    : (process.env.API_PORT && process.env.API_PORT.trim() !== "")
+      ? process.env.API_PORT
+      : "4000";
+const port = Number(portEnv);
+const hostEnv = process.env.API_HOST;
+const host = hostEnv && hostEnv.trim() !== "" ? hostEnv : "0.0.0.0";
 const corsOrigin = process.env.API_CORS_ORIGIN ?? "http://localhost:3000";
 
 const app = Fastify({
@@ -38,7 +45,8 @@ app.setErrorHandler((err, _req, reply) => {
   return fail(reply, { code: "INTERNAL", message: "Internal error" }, 500);
 });
 
-app.get("/health", async () => ({ ok: true }));
+app.get("/", async (req, reply) => ok(reply, { message: "GG-PLATFORM API is running", version: "1.0.0" }));
+app.get("/health", async (req, reply) => ok(reply, { ok: true }));
 
 // --- Internal: Scheduler (cron) ---
 app.get("/internal/run-scheduler", async (req, reply) => {
@@ -431,7 +439,7 @@ app.get("/v1/reader/contents", async (req, reply) => {
   const { data: scheduleRows } = await sb
     .from("content_schedule")
     .select("content_id,publish_at")
-    .in("content_id", contentIds);
+    .in("content_id", contentIds.length ? contentIds : ["00000000-0000-0000-0000-000000000000"]);
 
   const scheduleByContentId = new Map((scheduleRows ?? []).map((r) => [r.content_id, r.publish_at]));
 
@@ -784,3 +792,4 @@ app.get("/v1/soc/health", async (req, reply) => {
 });
 
 await app.listen({ port, host });
+app.log.info(`Server listening at http://${host}:${port}`);
