@@ -46,7 +46,9 @@ app.setErrorHandler((err, _req, reply) => {
 });
 
 app.get("/", async (req, reply) => ok(reply, { message: "GG-PLATFORM API is running", version: "1.0.0" }));
-app.get("/health", async (_req, reply) => reply.send({ ok: true }));
+// Health check endpoint: returns standard API format for consistency
+// External health probes (Render, load balancers) accept HTTP 200 with any body format
+app.get("/health", async (_req, reply) => ok(reply, { ok: true }));
 
 // --- Internal: Scheduler (cron) ---
 app.get("/internal/run-scheduler", async (req, reply) => {
