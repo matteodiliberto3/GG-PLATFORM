@@ -1,0 +1,28 @@
+.wrapper {
+  width: 100%;
+  min-height: 200px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.iframe {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  border: 0;
+}
+
+.placeholder,
+.error {
+  padding: 1rem;
+  background: #1a1a1a;
+  color: #888;
+  font-size: 0.875rem;
+  border-radius: 8px;
+}
+
+.error {
+  color: #f44;
+}

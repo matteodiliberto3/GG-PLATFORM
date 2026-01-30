@@ -1,0 +1,19 @@
+.next
+out
+dist
+coverage
+node_modules
+.DS_Store
+*.log
+
+# env
+.env
+.env.*.local
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfvars
+!terraform/*.tfvars.example
+terraform/.terraform.lock.hcl

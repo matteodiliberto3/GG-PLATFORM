@@ -1,0 +1,157 @@
+.inspector {
+  width: 300px;
+  flex-shrink: 0;
+  background: #1D1D1F;
+  border-left: 1px solid #333;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.panel {
+  margin-bottom: 1.5rem;
+}
+
+.panelTitle {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+  margin-bottom: 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "San Francisco", sans-serif;
+}
+
+.programmaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.75rem;
+  background: #007AFF;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+
+.programmaBtn:hover {
+  background: #0066dd;
+}
+
+.scheduling {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  color: #ccc;
+}
+
+.input {
+  padding: 0.5rem;
+  background: #000;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #007AFF;
+}
+
+.error {
+  font-size: 0.8125rem;
+  color: #f44;
+}
+
+.scheduleCta {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: #007AFF;
+  border: 1px solid #007AFF;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.scheduleCta:hover {
+  background: rgba(0, 122, 255, 0.1);
+}
+
+.confirmOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.confirmCard {
+  background: #1D1D1F;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  max-width: 360px;
+}
+
+.confirmText {
+  font-size: 0.9375rem;
+  margin-bottom: 1.25rem;
+  color: #e0e0e0;
+}
+
+.confirmActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.confirmYes {
+  padding: 0.5rem 1rem;
+  background: #007AFF;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.confirmYes:hover {
+  background: #0066dd;
+}
+
+.confirmNo {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: #888;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.confirmNo:hover {
+  color: #fff;
+  border-color: #555;
+}
+
+.placeholder {
+  font-size: 0.8125rem;
+  color: #666;
+  font-style: italic;
+}

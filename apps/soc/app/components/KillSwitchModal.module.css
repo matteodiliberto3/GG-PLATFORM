@@ -1,0 +1,119 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+  position: relative;
+  background: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 400px;
+  width: 90vw;
+}
+
+.title {
+  font-size: 1rem;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  color: #FF0000;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 0.875rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  background: #000;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.btnProponi {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: #FF0000;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  cursor: pointer;
+}
+
+.btnProponi:hover {
+  background: #cc0000;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btnConfirm {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background: #FF0000;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  cursor: pointer;
+}
+
+.btnConfirm:hover {
+  background: #cc0000;
+}
+
+.btnCancel {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #555;
+  color: #888;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btnCancel:hover {
+  border-color: #888;
+  color: #fff;
+}
+
+.close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}

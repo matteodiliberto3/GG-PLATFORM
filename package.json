@@ -1,0 +1,20 @@
+{
+  "name": "gg-platform",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm -ws run dev",
+    "build": "npm -ws run build",
+    "lint": "npm -ws run lint",
+    "typecheck": "npm -ws run typecheck"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

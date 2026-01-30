@@ -1,0 +1,52 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #0a0a0a;
+  border-bottom: 1px solid #222;
+  flex-shrink: 0;
+}
+
+.nodes {
+  display: flex;
+  gap: 1rem;
+}
+
+.node {
+  font-size: 0.75rem;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+}
+
+.node[data-status="ok"] {
+  color: #00FF00;
+}
+
+.killSwitch {
+  padding: 0.35rem 0.75rem;
+  background: transparent;
+  border: 1px solid #FF0000;
+  color: #FF0000;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  cursor: pointer;
+}
+
+.killSwitch:hover {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.killActive {
+  padding: 0.35rem 0.75rem;
+  background: #FF0000;
+  border: 1px solid #FF0000;
+  color: #000;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  cursor: pointer;
+}

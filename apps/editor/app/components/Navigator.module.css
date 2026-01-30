@@ -1,0 +1,59 @@
+.nav {
+  width: 240px;
+  flex-shrink: 0;
+  background: #1D1D1F;
+  border-right: 1px solid #333;
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "San Francisco", sans-serif;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item,
+.itemActive {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  color: #ccc;
+  text-align: left;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.item:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.itemActive {
+  color: #007AFF;
+  background: rgba(0, 122, 255, 0.1);
+}
+
+.empty {
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  color: #666;
+}

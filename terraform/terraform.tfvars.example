@@ -1,0 +1,14 @@
+# Copy to terraform.tfvars and fill (do not commit terraform.tfvars).
+# Or use env: export TF_VAR_cloudflare_api_token="..." etc.
+
+env                 = "default"
+domain_root         = "example.com"
+cloudflare_zone_id  = ""
+cloudflare_account_id = ""
+# cloudflare_api_token = ""   # use TF_VAR_cloudflare_api_token
+# vercel_api_token    = ""   # use TF_VAR_vercel_api_token
+vercel_team_id      = ""
+
+frontend_env = {
+  # NEXT_PUBLIC_API_BASE_URL = "https://api.example.com"
+}

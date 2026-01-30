@@ -1,0 +1,91 @@
+.panel {
+  width: 320px;
+  flex-shrink: 0;
+  background: #0d0d0d;
+  border-right: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #00FF00;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #222;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.tableWrap {
+  flex: 1;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  color: #666;
+  border-bottom: 1px solid #222;
+}
+
+.table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #1a1a1a;
+  color: #ccc;
+}
+
+.rowSelected td {
+  background: rgba(0, 255, 0, 0.05);
+  color: #fff;
+}
+
+.mono {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.empty {
+  color: #555;
+  font-style: italic;
+  padding: 1rem;
+}
+
+.btnApprove {
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.25rem;
+  background: transparent;
+  border: 1px solid #00FF00;
+  color: #00FF00;
+  border-radius: 4px;
+  font-size: 0.6875rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btnApprove:hover {
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.btnDeny {
+  padding: 0.2rem 0.5rem;
+  background: transparent;
+  border: 1px solid #FF0000;
+  color: #FF0000;
+  border-radius: 4px;
+  font-size: 0.6875rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btnDeny:hover {
+  background: rgba(255, 0, 0, 0.1);
+}

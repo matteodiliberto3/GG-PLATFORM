@@ -1,0 +1,102 @@
+.feed {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #00FF00;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #222;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #111;
+  font-size: 0.75rem;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: #0a0a0a;
+}
+
+.item.selected {
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot[data-severity="GREY"] {
+  background: #888;
+}
+
+.dot[data-severity="YELLOW"] {
+  background: #FFFF00;
+  box-shadow: 0 0 6px #FFFF00;
+}
+
+.dot[data-severity="RED"] {
+  background: #FF0000;
+  box-shadow: 0 0 6px #FF0000;
+}
+
+.sevGrey {
+  color: #888;
+}
+
+.sevYellow {
+  color: #FFFF00;
+}
+
+.sevRed {
+  color: #FF0000;
+}
+
+.time {
+  color: #555;
+  flex-shrink: 0;
+}
+
+.code {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user {
+  color: #666;
+  flex-shrink: 0;
+}
+
+.empty {
+  padding: 1rem;
+  color: #555;
+  font-style: italic;
+}

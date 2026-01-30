@@ -1,0 +1,19 @@
+.guida {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: #1D1D1F;
+  color: #007AFF;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "San Francisco", sans-serif;
+}
+
+.guida:hover {
+  background: #2a2a2c;
+  border-color: #007AFF;
+}

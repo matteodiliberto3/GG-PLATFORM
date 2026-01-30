@@ -1,0 +1,12 @@
+{
+  "name": "gg-wasm-hmac",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "wasm-pack build --target web",
+    "build:release": "wasm-pack build --target web --release"
+  },
+  "files": [
+    "pkg"
+  ]
+}

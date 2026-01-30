@@ -1,0 +1,75 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.spotlight {
+  position: fixed;
+  border-radius: 8px;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  border: 2px solid #007AFF;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  background: #1D1D1F;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 420px;
+  border: 1px solid #333;
+}
+
+.lockIcon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "San Francisco", sans-serif;
+}
+
+.body {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.body strong {
+  color: #fff;
+}
+
+.cta {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background: #007AFF;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.cta:hover {
+  background: #0066dd;
+}
