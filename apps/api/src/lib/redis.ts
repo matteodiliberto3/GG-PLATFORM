@@ -2,7 +2,9 @@ import Redis from "ioredis";
 
 export type SessionState = "ACTIVE" | "SUSPICIOUS" | "SHADOW_BANNED" | "HARD_BANNED";
 
-let client: Redis | null = null;
+type RedisClient = InstanceType<typeof Redis>;
+
+let client: RedisClient | null = null;
 
 function getRedisUrl() {
   const url = process.env.REDIS_URL;
@@ -10,7 +12,7 @@ function getRedisUrl() {
   return url;
 }
 
-export function getRedis(): Redis | null {
+export function getRedis(): RedisClient | null {
   if (client) return client;
   const url = getRedisUrl();
   if (!url) return null;
