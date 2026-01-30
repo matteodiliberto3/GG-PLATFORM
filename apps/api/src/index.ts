@@ -28,14 +28,18 @@ const portEnv =
 const port = Number(portEnv);
 const hostEnv = process.env.API_HOST;
 const host = hostEnv && hostEnv.trim() !== "" ? hostEnv : "0.0.0.0";
-const corsOrigin = process.env.API_CORS_ORIGIN ?? "http://localhost:3000";
+const corsOriginEnv = process.env.API_CORS_ORIGIN ?? "http://localhost:3000";
+// Support multiple origins separated by comma, or single origin
+const corsOrigins = corsOriginEnv.includes(",")
+  ? corsOriginEnv.split(",").map((o) => o.trim())
+  : corsOriginEnv;
 
 const app = Fastify({
   logger: true,
 });
 
 await app.register(helmet);
-await app.register(cors, { origin: corsOrigin });
+await app.register(cors, { origin: corsOrigins });
 
 app.setErrorHandler((err, _req, reply) => {
   if (err instanceof ApiError) {
